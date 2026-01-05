@@ -1,0 +1,86 @@
+<div class="team-details-container" *ngIf="team">
+  <button class="back-button" (click)="goBack()">
+    <span>←</span> All teams
+  </button>
+
+  <div class="team-header">
+    <div class="team-info">
+      <h1 class="team-name">{{ team.fullName }}</h1>
+      <div class="team-meta">
+        <div class="meta-item">
+          <span class="label">Base:</span>
+          <span>{{ team.base }}</span>
+        </div>
+        <div class="meta-item">
+          <span class="label">Team Chief:</span>
+          <span>{{ team.teamChief }}</span>
+        </div>
+        <div class="meta-item">
+          <span class="label">Technical Chief:</span>
+          <span>{{ team.technicalChief }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3>Team Profile</h3>
+      <div class="stat-item">
+        <span class="stat-label">Full Name</span>
+        <span class="stat-value">{{ team.fullName }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Base</span>
+        <span class="stat-value">{{ team.base }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Team Chief</span>
+        <span class="stat-value">{{ team.teamChief }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Technical Chief</span>
+        <span class="stat-value">{{ team.technicalChief }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Chassis</span>
+        <span class="stat-value">{{ team.chassis }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Power Unit</span>
+        <span class="stat-value">{{ team.powerUnit }}</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <h3>Team History</h3>
+      <div class="stat-item">
+        <span class="stat-label">First Entry</span>
+        <span class="stat-value">{{ team.firstEntry }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">World Championships</span>
+        <span class="stat-value highlight">{{ team.worldChampionships }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Pole Positions</span>
+        <span class="stat-value">{{ team.polePositions }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Fastest Laps</span>
+        <span class="stat-value">{{ team.fastestLaps }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="drivers-section">
+    <h2>2025 Drivers</h2>
+    <div class="drivers-grid">
+      <div class="driver-card" *ngFor="let driver of team.drivers" (click)="viewDriver(driver.id)">
+        <div class="driver-number">{{ driver.number }}</div>
+        <h3>{{ driver.name }}</h3>
+        <button class="view-driver-btn">View Profile</button>
+      </div>
+    </div>
+  </div>
+</div>

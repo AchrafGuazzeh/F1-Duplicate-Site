@@ -1,0 +1,26 @@
+<div class="page-container">
+  <h1>F1 Drivers 2025</h1>
+  <div class="drivers-grid">
+    <div class="driver-card" *ngFor="let driver of drivers" (click)="viewDriverDetails(driver.id)" 
+         [style.background]="driver.teamColor">
+      
+      
+      <div class="driver-info">
+        <h2 class="driver-first-name">{{ driver.firstName }}</h2>
+        <div class="driver-name-number-container">
+          <h3 class="driver-last-name">{{ driver.lastName }}</h3>
+          <div class="driver-number-display">{{ driver.number }}</div>
+        </div>
+        <p class="driver-team">{{ driver.team }}</p>
+      </div>
+
+      
+      <div class="dotted-pattern"></div>
+
+      
+      <div class="driver-photo">
+        <img [src]="driver.image" [alt]="driver.firstName + ' ' + driver.lastName">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,250 @@
+.driver-details-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  color: white;
+}
+
+.back-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 10px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+  transition: opacity 0.3s;
+}
+
+.back-button:hover {
+  opacity: 0.7;
+}
+
+.back-button span {
+  font-size: 20px;
+}
+
+/* Driver Header */
+.driver-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background: linear-gradient(135deg, var(--team-color, #e10600) 0%, color-mix(in srgb, var(--team-color, #e10600) 70%, black) 100%);
+  padding: 60px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.driver-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+  pointer-events: none;
+}
+
+.driver-info {
+  z-index: 2;
+}
+
+.driver-name-section {
+  margin-bottom: 30px;
+}
+
+.driver-name .first-name {
+  font-size: 32px;
+  font-weight: 300;
+  font-style: italic;
+  display: block;
+  margin-bottom: -10px;
+}
+
+.driver-name .last-name {
+  font-size: 72px;
+  font-weight: 900;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.driver-meta {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.driver-number {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.shop-button {
+  background: white;
+  color: var(--team-color, #e10600);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.shop-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.driver-image {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.driver-photo {
+  height: 500px;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom right;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+}
+
+.driver-number-bg {
+  font-size: 300px;
+  font-weight: 900;
+  opacity: 0.15;
+  position: absolute;
+  right: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 1;
+  z-index: 1;
+}
+
+/* Statistics */
+.stats-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.stats-section {
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.stats-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.career-stats {
+  background: #2a2a2a;
+}
+
+.career-grid .stat-value {
+  font-size: 28px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .driver-header {
+    grid-template-columns: 1fr;
+  }
+  
+  .driver-number-bg {
+    font-size: 200px;
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .driver-header {
+    padding: 40px 30px;
+  }
+  
+  .driver-name .first-name {
+    font-size: 24px;
+  }
+  
+  .driver-name .last-name {
+    font-size: 48px;
+  }
+  
+  .driver-meta {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .stats-section {
+    padding: 30px 20px;
+  }
+  
+  .section-title {
+    font-size: 22px;
+  }
+  
+  .stat-value {
+    font-size: 20px;
+  }
+}

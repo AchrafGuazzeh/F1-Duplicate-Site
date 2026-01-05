@@ -1,0 +1,23 @@
+<div class="page-container">
+  <h1 class="page-title">2025 Driver Standings</h1>
+  
+  <div class="standings-table">
+    <div class="table-header">
+      <div class="col-pos">POS.</div>
+      <div class="col-driver">DRIVER</div>
+      <div class="col-nationality">NATIONALITY</div>
+      <div class="col-team">TEAM</div>
+      <div class="col-points">PTS.</div>
+    </div>
+    
+    <div class="table-body">
+      <div class="table-row" *ngFor="let standing of driverStandings">
+        <div class="col-pos">{{ standing.position }}</div>
+        <div class="col-driver">{{ standing.driver }}</div>
+        <div class="col-nationality">{{ standing.nationality }}</div>
+        <div class="col-team">{{ standing.team }}</div>
+        <div class="col-points">{{ standing.points }}</div>
+      </div>
+    </div>
+  </div>
+</div>

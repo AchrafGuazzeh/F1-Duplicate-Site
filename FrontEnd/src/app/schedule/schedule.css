@@ -1,0 +1,55 @@
+/* Schedule Page Styles */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.page-container h1 {
+  font-size: 2.5rem;
+  color: #15151e;
+  margin-bottom: 2rem;
+  border-bottom: 4px solid #e10600;
+  padding-bottom: 1rem;
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.race-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 2px solid #e8e8e8;
+  border-left: 6px solid #e10600;
+  border-radius: 8px;
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.race-item:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transform: translateX(5px);
+}
+
+.race-date {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e10600;
+  min-width: 100px;
+  margin-right: 2rem;
+}
+
+.race-info h3 {
+  font-size: 1.5rem;
+  color: #15151e;
+  margin-bottom: 0.5rem;
+}
+
+.race-info p {
+  color: #666;
+}

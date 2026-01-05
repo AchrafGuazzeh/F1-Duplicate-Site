@@ -1,0 +1,120 @@
+<div class="driver-details-container" *ngIf="driver">
+  
+  <button class="back-button" (click)="goBack()">
+    <span>←</span> All drivers
+  </button>
+
+  
+  <div class="driver-header">
+    <div class="driver-info">
+      <div class="driver-name-section">
+        <div class="driver-name">
+          <span class="first-name">{{ driver.firstName }}</span>
+          <h1 class="last-name">{{ driver.lastName }}</h1>
+        </div>
+      </div>
+      <div class="driver-meta">
+        <div class="meta-item">
+          <span class="flag">🏁</span>
+          <span>{{ driver.country }}</span>
+        </div>
+        <div class="meta-item">
+          <span>{{ driver.team }}</span>
+        </div>
+        <div class="meta-item">
+          <span class="driver-number">{{ driver.number }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="driver-image">
+      <div class="driver-number-bg">{{ driver.number }}</div>
+      <img [src]="driver.image" [alt]="driver.name" class="driver-photo">
+    </div>
+  </div>
+
+  <div class="stats-container">
+    <div class="stats-section">
+      <h2 class="section-title">SEASON</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-label">Season Position</span>
+          <span class="stat-value">{{ driver.seasonStats.position }}{{ getOrdinalSuffix(driver.seasonStats.position) }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Season Points</span>
+          <span class="stat-value">{{ driver.seasonStats.points }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Grand Prix Races</span>
+          <span class="stat-value">{{ driver.seasonStats.grandPrixRaces }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Grand Prix Points</span>
+          <span class="stat-value">{{ driver.seasonStats.grandPrixPoints }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Grand Prix Wins</span>
+          <span class="stat-value">{{ driver.seasonStats.grandPrixWins }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Grand Prix Podiums</span>
+          <span class="stat-value">{{ driver.seasonStats.grandPrixPodiums }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Grand Prix Poles</span>
+          <span class="stat-value">{{ driver.seasonStats.grandPrixPoles }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Grand Prix Top 10s</span>
+          <span class="stat-value">{{ driver.seasonStats.grandPrixTop10s }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">DHL Fastest Laps</span>
+          <span class="stat-value">{{ driver.seasonStats.dhlFastestLaps }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">DNFs</span>
+          <span class="stat-value">{{ driver.seasonStats.dnfs }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Sprint Races</span>
+          <span class="stat-value">{{ driver.seasonStats.sprintRaces }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Sprint Points</span>
+          <span class="stat-value">{{ driver.seasonStats.sprintPoints }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-section career-stats">
+      <h2 class="section-title">CAREER STATS</h2>
+      <div class="stats-grid career-grid">
+        <div class="stat-item">
+          <span class="stat-label">Grand Prix Entered</span>
+          <span class="stat-value">{{ driver.careerStats.grandPrixEntered }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Career Points</span>
+          <span class="stat-value">{{ driver.careerStats.careerPoints }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Highest Race Finish</span>
+          <span class="stat-value">{{ driver.careerStats.highestRaceFinish }} (x{{ driver.careerStats.highestRaceFinishCount }})</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Podiums</span>
+          <span class="stat-value">{{ driver.careerStats.podiums }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Highest Grid Position</span>
+          <span class="stat-value">{{ driver.careerStats.highestGridPosition }} (x{{ driver.careerStats.highestGridPositionCount }})</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Pole Positions</span>
+          <span class="stat-value">{{ driver.careerStats.polePositions }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

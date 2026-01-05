@@ -1,0 +1,26 @@
+<div class="page-container">
+  <div class="header">
+    <h1>{{ productTypeName }}</h1>
+    <button class="add-button" (click)="goToAddProduct()">Add a product</button>
+  </div>
+  
+  <div class="products-grid" *ngIf="products.length > 0">
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.imageUrl" [alt]="product.nom" class="product-image">
+      <div class="product-info">
+        <h3>{{ product.nom }}</h3>
+        <p class="product-price">{{ product.prix }} €</p>
+        <p class="product-quantity">Quantity: {{ product.quantite }}</p>
+        <div class="product-actions">
+          <button class="modify-button" (click)="modifyProduct(product.id)">Modify</button>
+          <button class="delete-button" (click)="deleteProduct(product.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="empty-state" *ngIf="products.length === 0">
+    <p>No products available at the moment.</p>
+    <button class="add-button" (click)="goToAddProduct()">Add the first product</button>
+  </div>
+</div>

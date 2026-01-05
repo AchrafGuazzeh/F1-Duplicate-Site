@@ -1,0 +1,165 @@
+:host {
+  display: block;
+}
+
+.page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.page-container h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  border-bottom: 4px solid #e10600;
+  padding-bottom: 1rem;
+}
+
+.drivers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.driver-card {
+  position: relative;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  height: 330px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.driver-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* Driver Info Section */
+.driver-info {
+  position: relative;
+  z-index: 2;
+}
+
+.driver-first-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.driver-name-number-container {
+  position: relative;
+  display: inline-block;
+  margin: 0.3rem 0 0.8rem 0;
+}
+
+.driver-last-name {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.driver-number-display {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.25);
+  z-index: 1;
+  text-shadow: none;
+  font-family: 'F1', 'Titillium Web', Arial, sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.driver-team {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 600;
+  text-transform: capitalize;
+  opacity: 0.95;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Country Flag */
+.country-flag {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Dotted Pattern Overlay */
+.dotted-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+  background-size: 8px 8px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Driver Photo */
+.driver-photo {
+  position: absolute;
+  bottom: 0;
+  right: -20px;
+  height: 280px;
+  width: 60%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.driver-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom right;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .drivers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .driver-card {
+    height: 300px;
+  }
+  
+  .driver-photo {
+    width: 55%;
+  }
+}

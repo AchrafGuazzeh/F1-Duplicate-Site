@@ -1,0 +1,68 @@
+<div class="page-container">
+  <h1>Modify Ticket</h1>
+  
+  <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()" class="ticket-form">
+    <div class="form-group">
+      <label for="name">Ticket Name:</label>
+      <input 
+        type="text" 
+        id="name" 
+        formControlName="name"
+        placeholder="Enter ticket name"
+        class="form-control"
+      >
+      <div class="error-message" *ngIf="ticketForm.get('name')?.invalid && ticketForm.get('name')?.touched">
+        Ticket name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input 
+        type="number" 
+        id="quantity" 
+        formControlName="quantity"
+        placeholder="0"
+        class="form-control"
+      >
+      <div class="error-message" *ngIf="ticketForm.get('quantity')?.invalid && ticketForm.get('quantity')?.touched">
+        Quantity must be a positive number
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="race">Race:</label>
+      <input 
+        type="text" 
+        id="race" 
+        formControlName="race"
+        placeholder="Enter race name"
+        class="form-control"
+      >
+      <div class="error-message" *ngIf="ticketForm.get('race')?.invalid && ticketForm.get('race')?.touched">
+        Race name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="type">Ticket Type:</label>
+      <select 
+        id="type" 
+        formControlName="type"
+        class="form-control"
+      >
+        <option value="weekend-pass">Weekend Pass</option>
+        <option value="grandstand">Grandstand Seat</option>
+      </select>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" [disabled]="ticketForm.invalid" class="submit-button">
+        Modify
+      </button>
+      <button type="button" (click)="onCancel()" class="cancel-button">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

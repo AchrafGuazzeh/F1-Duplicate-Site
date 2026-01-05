@@ -1,0 +1,212 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Titillium Web', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #15151e !important;
+  color: #ffffff !important;
+  min-height: 100vh;
+}
+
+:root {
+  --f1-red: #e10600;
+  --f1-dark-bg: #15151e;
+  --f1-darker-bg: #0f0f14;
+}
+
+
+.f1-header {
+  position: static;
+  width: 100%;
+  background: var(--f1-dark-bg);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  animation: slideDown 0.6s ease-out;
+}
+
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.nav-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.75rem 3rem;
+  background: var(--f1-darker-bg);
+  color: white;
+  min-height: 65px;
+  position: relative;
+  overflow: hidden;
+  gap: 3rem;
+}
+
+.nav-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 50px,
+      rgba(255,255,255,0.015) 50px,
+      rgba(255,255,255,0.015) 100px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeInDown 0.8s ease-out 0.2s both;
+}
+
+.logo a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+  filter: brightness(1.05);
+  padding: 4px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.top-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.top-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  opacity: 0;
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.top-menu a:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+.top-menu a:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.top-menu a:hover,
+.top-menu a.active {
+  color: var(--f1-red);
+  transform: translateY(-2px);
+}
+
+/* Main Navigation Bar */
+.main-nav {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.main-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 0;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.main-nav a:nth-child(1) {
+  animation-delay: 0.6s;
+}
+
+.main-nav a:nth-child(2) {
+  animation-delay: 0.7s;
+}
+
+.main-nav a:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.main-nav a:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+.main-nav a:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.main-nav a:hover {
+  color: var(--f1-red);
+  transform: translateY(-2px);
+}
+
+.main-nav a.active {
+  color: var(--f1-red);
+  border-bottom: 2px solid var(--f1-red);
+  padding-bottom: calc(0.5rem - 2px);
+}
+
+.content {
+  min-height: calc(100vh - 80px);
+  padding-top: 2rem;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}

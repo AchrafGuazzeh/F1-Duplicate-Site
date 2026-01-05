@@ -1,0 +1,23 @@
+<div class="page-container">
+  <div class="header">
+    <h1>Latest F1 News</h1>
+    <button class="add-button" (click)="goToAddNews()">Add News</button>
+  </div>
+  
+  <div class="news-grid" *ngIf="newsList.length > 0">
+    <article class="news-card" *ngFor="let news of newsList">
+      <h3>{{ news.title }}</h3>
+      <p>{{ news.description }}</p>
+      <span class="news-date">{{ news.date }}</span>
+      <div class="news-actions">
+        <button class="modify-button" (click)="modifyNews(news.id)">Modify</button>
+        <button class="delete-button" (click)="deleteNews(news.id)">Delete</button>
+      </div>
+    </article>
+  </div>
+  
+  <div class="empty-state" *ngIf="newsList.length === 0">
+    <p>No news articles available at the moment.</p>
+    <button class="add-button" (click)="goToAddNews()">Add the first article</button>
+  </div>
+</div>

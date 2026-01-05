@@ -1,0 +1,25 @@
+<div class="page-container">
+  <div class="header">
+    <h1>{{ ticketTypeName }}</h1>
+    <button class="add-button" (click)="goToAddTicket()">Add a Ticket</button>
+  </div>
+  
+  <div class="tickets-grid" *ngIf="tickets.length > 0">
+    <div class="ticket-card" *ngFor="let ticket of tickets">
+      <div class="ticket-info">
+        <h3>{{ ticket.name }}</h3>
+        <p class="ticket-race"><strong>Race:</strong> {{ ticket.race }}</p>
+        <p class="ticket-quantity"><strong>Quantity:</strong> {{ ticket.quantity }}</p>
+        <div class="ticket-actions">
+          <button class="modify-button" (click)="modifyTicket(ticket.id)">Modify</button>
+          <button class="delete-button" (click)="deleteTicket(ticket.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="empty-state" *ngIf="tickets.length === 0">
+    <p>No tickets available at the moment.</p>
+    <button class="add-button" (click)="goToAddTicket()">Add the first ticket</button>
+  </div>
+</div>

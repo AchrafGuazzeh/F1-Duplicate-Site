@@ -1,0 +1,66 @@
+/* Tickets Page Styles */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.page-container h1 {
+  font-size: 2.5rem;
+  color: #15151e;
+  margin-bottom: 2rem;
+  border-bottom: 4px solid #e10600;
+  padding-bottom: 1rem;
+}
+
+.tickets-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.ticket-type {
+  background: white;
+  border: 2px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.ticket-type:hover {
+  border-color: #e10600;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(225, 6, 0, 0.2);
+}
+
+.ticket-type h3 {
+  font-size: 1.8rem;
+  color: #15151e;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.ticket-type p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.ticket-type .btn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #e10600;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.ticket-type .btn:hover {
+  background: #c10500;
+  transform: scale(1.05);
+}

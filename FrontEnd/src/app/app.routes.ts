@@ -1,0 +1,41 @@
+import { Routes } from '@angular/router';
+import { Home } from './home/home';
+import { Teams } from './teams/teams';
+import { TeamDetails } from './team-details/team-details';
+import { Drivers } from './drivers/drivers';
+import { DriverDetails } from './driver-details/driver-details';
+import { Schedule } from './schedule/schedule';
+import { Results } from './results/results';
+import { News } from './news/news';
+import { AddNews } from './add-news/add-news';
+import { ModifyNews } from './modify-news/modify-news';
+import { Store } from './store/store';
+import { Tickets } from './tickets/tickets';
+import { MerchandiseList } from './merchandise-list/merchandise-list';
+import { AddProduct } from './add-product/add-product';
+import { ModifyProduct } from './modify-product/modify-product';
+import { TicketList } from './ticket-list/ticket-list';
+import { AddTicket } from './add-ticket/add-ticket';
+import { ModifyTicket } from './modify-ticket/modify-ticket';
+
+export const routes: Routes = [
+  { path: '', component: Home, pathMatch: 'full' },
+  { path: 'home', component: Home },
+  { path: 'teams', component: Teams },
+  { path: 'teams/:id', component: TeamDetails },
+  { path: 'drivers', component: Drivers },
+  { path: 'drivers/:id', component: DriverDetails },
+  { path: 'schedule', component: Schedule },
+  { path: 'results', component: Results },
+  { path: 'news', component: News },
+  { path: 'news/add', component: AddNews },
+  { path: 'news/modify/:id', component: ModifyNews },
+  { path: 'store', component: Store },
+  { path: 'store/merchandise', component: MerchandiseList },
+  { path: 'store/add-product', component: AddProduct },
+  { path: 'store/modify-product/:id', component: ModifyProduct },
+  { path: 'tickets', component: Tickets },
+  { path: 'tickets/ticket-list', component: TicketList },
+  { path: 'tickets/add-ticket', component: AddTicket },
+  { path: 'tickets/modify-ticket/:id', component: ModifyTicket }
+];

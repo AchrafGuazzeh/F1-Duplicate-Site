@@ -1,0 +1,27 @@
+<div class="page-container">
+  <h1>F1 Teams 2025</h1>
+  <div class="teams-grid">
+    <div class="team-card" *ngFor="let team of teams" (click)="viewTeamDetails(team.id)"
+         [style.background]="team.color">
+      
+      <div class="team-logo">
+        <img [src]="team.logo" [alt]="team.name + ' logo'">
+      </div>
+      
+      <h3 class="team-name">{{ team.name }}</h3>
+      
+      <div class="drivers-container">
+        <div class="driver" *ngFor="let driver of team.drivers">
+          <span class="driver-icon">👤</span>
+          <span class="driver-name">{{ driver.name }}</span>
+        </div>
+      </div>
+      
+      <div class="dotted-pattern"></div>
+      
+      <div class="car-container">
+        <img [src]="team.carImage" [alt]="team.name + ' car'" class="car-image">
+      </div>
+    </div>
+  </div>
+</div>

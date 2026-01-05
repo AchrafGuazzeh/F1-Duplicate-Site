@@ -1,0 +1,120 @@
+/* Results Page Styles */
+.page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: #15151e;
+  min-height: 100vh;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.standings-table {
+  background: #000;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 1fr 120px;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: #000;
+  border-bottom: 1px solid #333;
+}
+
+.table-header > div {
+  color: #999;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.table-body {
+  background: #000;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 1fr 120px;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #222;
+  transition: background 0.2s ease;
+  align-items: center;
+}
+
+.table-row:hover {
+  background: #111;
+}
+
+.col-pos {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.col-driver,
+.col-nationality,
+.col-team {
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.col-points {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 80px 1fr 1fr 1fr 100px;
+    gap: 0.75rem;
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .col-driver,
+  .col-nationality,
+  .col-team {
+    font-size: 0.875rem;
+  }
+  
+  .team-indicator {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 2rem 1rem;
+  }
+  
+  .table-header,
+  .table-row {
+    grid-template-columns: 60px 2fr 1fr 100px;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .col-nationality {
+    display: none;
+  }
+  
+  .page-title {
+    font-size: 1.8rem;
+  }
+}

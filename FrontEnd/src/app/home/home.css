@@ -1,0 +1,337 @@
+
+.home-container {
+  
+  width: 100%;
+  background: #15151e;
+  min-height: 100vh;
+}
+
+
+.hero-section {
+  background: linear-gradient(135deg, #e10600 0%, #15151e 100%);
+  color: white;
+  padding: 0;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(225, 6, 0, 0.75) 0%, rgba(21, 21, 30, 0.85) 100%);
+  z-index: 1;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, rgba(21,21,30,0.3) 1px, transparent 1px),
+    linear-gradient(rgba(21,21,30,0.3) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.1;
+  z-index: 2;
+}
+
+.hero-content {
+  max-width: 1400px;
+  width: 100%;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  font-weight: 900;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #fff 30%, rgba(255,255,255,0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.hero-subtitle {
+  display: none;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1.1rem 2.8rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.btn-primary {
+  background: #e10600;
+  color: white;
+  padding: 1.1rem 2.8rem;
+  border-radius: 2px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(225, 6, 0, 0.4);
+}
+
+.btn-primary:hover {
+  background: #ff0800;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(225, 6, 0, 0.6);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 1rem 2.6rem;
+  border-radius: 2px;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #15151e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+
+/* News Section */
+.news-section {
+  padding: 4rem 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #15151e;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: white;
+  border-left: 4px solid #e10600;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.manage-news-btn {
+  background: #e10600;
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 2px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(225, 6, 0, 0.4);
+}
+
+.manage-news-btn:hover {
+  background: #ff0800;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(225, 6, 0, 0.6);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.news-card {
+  background: #1e1e28;
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.news-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(225, 6, 0, 0.3);
+}
+
+.news-card:hover .news-image img {
+  transform: scale(1.05);
+}
+
+.news-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.news-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(30,30,40,0.8));
+}
+
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.news-content {
+  padding: 1.5rem;
+}
+
+.news-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: white;
+  line-height: 1.4;
+}
+
+.news-date {
+  font-size: 0.85rem;
+  color: #e10600;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.news-excerpt {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  color: #e10600;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.read-more:hover {
+  color: #ff0800;
+  transform: translateX(5px);
+}
+
+.empty-news {
+  text-align: center;
+  padding: 3rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.empty-news p {
+  font-size: 1.1rem;
+}
+
+
+@media (min-width: 1100px) {
+  .hero-section {
+    min-height: 75vh;
+  }
+  .hero-content {
+    padding-left: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  .hero-subtitle { 
+    display: block;
+  }
+  .hero-section {
+    min-height: 60vh;
+  }
+  .news-section {
+    padding: 2.5rem 1.5rem;
+  }
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .btn {
+    padding: 0.9rem 2rem;
+    font-size: 0.9rem;
+  }
+}

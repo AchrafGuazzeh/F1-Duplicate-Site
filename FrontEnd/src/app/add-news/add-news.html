@@ -1,0 +1,49 @@
+<div class="page-container">
+  <div class="form-container">
+    <h1>Add News Article</h1>
+    <form [formGroup]="newsForm" (ngSubmit)="addNews()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input 
+          type="text" 
+          id="title" 
+          formControlName="title"
+          placeholder="Enter news title">
+        <div class="error-message" *ngIf="newsForm.get('title')?.invalid && newsForm.get('title')?.touched">
+          <small *ngIf="newsForm.get('title')?.errors?.['required']">Title is required</small>
+          <small *ngIf="newsForm.get('title')?.errors?.['minlength']">Title must be at least 3 characters</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea 
+          id="description" 
+          formControlName="description"
+          rows="5"
+          placeholder="Enter news description"></textarea>
+        <div class="error-message" *ngIf="newsForm.get('description')?.invalid && newsForm.get('description')?.touched">
+          <small *ngIf="newsForm.get('description')?.errors?.['required']">Description is required</small>
+          <small *ngIf="newsForm.get('description')?.errors?.['minlength']">Description must be at least 10 characters</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input 
+          type="text" 
+          id="date" 
+          formControlName="date"
+          placeholder="e.g., December 18, 2025">
+        <div class="error-message" *ngIf="newsForm.get('date')?.invalid && newsForm.get('date')?.touched">
+          <small *ngIf="newsForm.get('date')?.errors?.['required']">Date is required</small>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-submit" [disabled]="newsForm.invalid">Add News</button>
+        <button type="button" class="btn-cancel" (click)="cancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
